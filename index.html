@@ -1,3 +1,4 @@
+<!-- Om Tiwari Portfolio Page -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,7 +102,7 @@
                 <p>
                     I'm a <span id="typify-text"
                         class="text-warning text-uppercase fw-bold text-decoration-underline"></span>
-                    </p>
+                </p>
             </div>
         </div>
     </header>
@@ -290,13 +291,23 @@
 <script src="script.js"></script>
 <script>
     const typingText = Typify('#typify-text', {
-        text: ['Web Developer!', 'FrontEnd Developer!', 'Problem Solver!','Full Stack Java Developer !'],
+        text: ['Web Developer!', 'FrontEnd Developer!', 'Problem Solver!', 'Full Stack Java Developer !'],
         delay: 100,
         loop: true,
         cursor: true,
         stringDelay: 1000
     });
 </script>
-
+<script>
+    //Google Sheet connect code
+    var scriptURL = "https://script.google.com/macros/s/AKfycbz8rvnSNhF60ISYsBgqMvQ3Tv9sSg8bCMQGAsVkOTVvd3kln1YgLfcTUB9wzd6malCR/exec";
+    var form = document.forms['google-sheet'];
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thanks for Contacting us..! I Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+    });
+</script>
 
 </html>
